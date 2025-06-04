@@ -1,15 +1,18 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Hacked from "./components/hacked";
+import { useState } from "react";
+import LoginForm from "./pages/Login";
+import SRPForm from "./pages/Srp";
 
 function App() {
+  const [userId, setUserId] = useState(null);
+
   return (
-    <Router>
-      <div>
-        <Routes>
-          <Route path="/" element={<Hacked />} />
-        </Routes>
-      </div>
-    </Router>
+    <div>
+      {!userId ? (
+        <LoginForm onSuccess={setUserId} />
+      ) : (
+        <SRPForm userId={userId} />
+      )}
+    </div>
   );
 }
 

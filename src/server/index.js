@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import db from "./config/Database.js";
 import cookieParser from "cookie-parser";
+import authRoutes from "./controllers/auth.js";
 
 dotenv.config();
 const app = express();
@@ -23,15 +24,17 @@ app.use(
   })
 );
 
-try {
+/* try {
   await db.authenticate();
   console.log("Database terhubung..");
 } catch (error) {
   console.error(error);
-}
+} */
 
 app.use(cookieParser());
 app.use(express.json());
+
+app.use("/api", authRoutes);
 
 app.listen(process.env.APP_PORT, () => {
   console.log("Server up and running...");
