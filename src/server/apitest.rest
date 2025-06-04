@@ -1,0 +1,53 @@
+
+###
+POST http://localhost:5000/cek
+content-type: application/json
+{
+    "raid_id": 1,
+    "party":1
+
+}
+###
+POST http://localhost:5000/insert-react
+content-type: application/json
+{
+    "user_id": "00cd9101-3eca-42e1-9132-975615278a75",
+    "post_id":"e67818e4-e84b-4209-9f87-2ab7398fca77"
+
+}
+
+###
+POST http://localhost:5000/cek
+content-type: application/json
+
+{ 
+    "party":1,
+    "raid_id":"42289f4a-1f"
+}
+
+###
+POST http://localhost:5000/insert-react
+content-type: application/json
+
+{ 
+    "user_id":"00cd9101-3eca-42e1-9132-975615278a75",
+    "post_id":"e67818e4-e84b-4209-9f87-2ab7398fca77"
+}
+
+###
+POST http://localhost:5000/desc-react
+content-type: application/json
+
+{ 
+    "user_id":"00cd9101-3eca-42e1-9132-975615278a75",
+    "post_id":"e67818e4-e84b-4209-9f87-2ab7398fca77"
+}
+
+###
+POST   http://localhost:5000/comments
+content-type: application/json
+
+{ 
+    "post_id":"247b7623-2dd9-4ca0-8d57-f12b3f9b1d2e"
+}
+
